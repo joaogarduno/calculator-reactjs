@@ -1,6 +1,7 @@
 import './App.css';
 // Para poder importar una imagen necesitamos una sentencia de importacion
 import logoArtheFacto from './img/arthefacto-logo.png';
+import Boton from './component/boton';
 
 function App() {
   return (
@@ -23,7 +24,9 @@ function App() {
 
         {/* Para ir creando la estructura inicial creamos distintos <div> */}
         {/* Estos div definiran las filas, cada uno de estos sera una fila que vemos en una calculadora en los botones */}
-        <div className='fila'></div>
+        <div className='fila'>
+          <Boton>1</Boton>
+        </div>
         <div className='fila'></div>
         <div className='fila'></div>
         <div className='fila'></div>
