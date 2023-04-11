@@ -26,6 +26,7 @@ function App() {
         {/* Estos div definiran las filas, cada uno de estos sera una fila que vemos en una calculadora en los botones */}
         <div className='fila'>
           <Boton>1</Boton>
+          <Boton>+</Boton>
         </div>
         <div className='fila'></div>
         <div className='fila'></div>
