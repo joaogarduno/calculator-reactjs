@@ -24,13 +24,31 @@ function App() {
 
         {/* Para ir creando la estructura inicial creamos distintos <div> */}
         {/* Estos div definiran las filas, cada uno de estos sera una fila que vemos en una calculadora en los botones */}
+        {/* Cada fila tendra 4 botones */}
         <div className='fila'>
           <Boton>1</Boton>
+          <Boton>2</Boton>
+          <Boton>3</Boton>
           <Boton>+</Boton>
         </div>
-        <div className='fila'></div>
-        <div className='fila'></div>
-        <div className='fila'></div>
+        <div className='fila'>
+          <Boton>4</Boton>
+          <Boton>5</Boton>
+          <Boton>6</Boton>
+          <Boton>-</Boton>
+        </div>
+        <div className='fila'>
+          <Boton>7</Boton>
+          <Boton>8</Boton>
+          <Boton>9</Boton>
+          <Boton>*</Boton>
+        </div>
+        <div className='fila'>
+          <Boton>=</Boton>
+          <Boton>0</Boton>
+          <Boton>.</Boton>
+          <Boton>/</Boton>
+        </div>
 
         {/* Agregamos una nueva fila, esta ultima fila sera para el botón de clic */}
         <div className='fila'></div>

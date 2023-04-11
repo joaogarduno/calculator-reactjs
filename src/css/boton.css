@@ -41,6 +41,11 @@ Lo que estamos manejando son las proporciones, es decir la proporcion del ancho.
 */
 
 
+.boton-contenedor:hover{
+  background-color: #5A01A7;
+}
+
+
 
 /*
 Tambien asignamos el estilo a los operadores
@@ -48,4 +53,8 @@ Tambien asignamos el estilo a los operadores
 
 .operador{
   background-color: #00471B;
+}
+
+.operador:hover{
+  background-color: #FF6600;
 }
