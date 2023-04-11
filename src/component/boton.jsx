@@ -1,5 +1,6 @@
 // Despues de crear nuestros componentes lo primero que debemos hacer es importar "react"
 import React from 'react';
+import '../css/boton.css';
 
 // Luego definimos nuestro componente funcional
 function Boton(props){
@@ -59,7 +60,7 @@ function Boton(props){
       {props.children}
     </div>
 
-    // El metodo ".trim()" es un metodo que te permite remover del principio o del final de una cadena de caracteres o en este caso una plantilla
+    // El metodo ".trim()" es un metodo que te permite remover del principio o del final de una cadena de caracteres o en este caso una plantilla.
   );
 
 }

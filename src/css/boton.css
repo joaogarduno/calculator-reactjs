@@ -1,0 +1,51 @@
+/*
+
+Para nuestro botón tenemos 2 clases:
+  - "boton-contenedor".
+  - y tenemos la clase operador para aquellos botones que representen un operador.
+
+*/
+
+/* Para "boton-contenedor" necesitamos propiedades que son mas generales y que se aplican a cualquier botón */
+.boton-contenedor{
+  height: 83px;
+  display: flex;
+  flex: 1 1; /* <---- */
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  font-size: 38px;
+  background-color: #1B1B32;
+  color: white;
+  border-radius: 25px;
+  border: 2px solid white;
+  margin: 4px;
+  cursor: pointer;
+  user-select: none; /* esta propiedad nos permite que el texto no se pueda seleccionar con el raton y asi se parecera como un botón com tal y no como un div con un texto */
+}
+
+/*
+NOTA: ¿Qué pasa con el ancho de los botónes? bueno, esto aun no esta definido, pero para eso agregaremos una propiedad interesante:
+
+"flex: 1 1;"
+
+Esta propiedad estara definida en "flexbox" de una longitud flexible, es decir, cuanto se puede encoger o cuanto se puede expandir el componente en base a otros componentes que tengamos cerca, es decir, otros elementos.
+
+Por ejemplo:
+Si tenemos 2 botones el espacio se va a distribuir entre los dos botónes (mitad y mitad), ahora si tenemos 3 seria 1/3, 1/3, 1/3.
+
+Lo que estamos manejando son las proporciones, es decir la proporcion del ancho.
+
+"1 1" -> cuando decimos "1 1" estamos diciendole a CSS que queremos que esos elementos se distrubuyan en el espacio de forma equitativa que no haya uno mas grande que el otro, si no que deben tener el mismo ancho y la misma altura
+
+*/
+
+
+
+/*
+Tambien asignamos el estilo a los operadores
+*/
+
+.operador{
+  background-color: #00471B;
+}
