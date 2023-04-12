@@ -2,6 +2,7 @@ import './App.css';
 // Para poder importar una imagen necesitamos una sentencia de importacion
 import logoArtheFacto from './img/arthefacto-logo.png';
 import Boton from './component/boton';
+import Pantalla from './component/input';
 
 function App() {
   return (
@@ -20,6 +21,10 @@ function App() {
 
       {/* CONTENEDOR CALCULADORA */}
       <div className='contenedor-calculadora'>
+        {/* Ahora que tenemos nuestro componente Pantalla podemos mostrarlo en nuestra estructura principal */}
+        <Pantalla />
+
+
         {/* Dentro de este <div> vamos a tener todos los botones las filas y los distintos elementos de la calculadora como su pantalla */}
 
         {/* Para ir creando la estructura inicial creamos distintos <div> */}
