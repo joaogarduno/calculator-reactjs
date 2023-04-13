@@ -3,6 +3,7 @@ import './App.css';
 import logoArtheFacto from './img/arthefacto-logo.png';
 import Boton from './component/boton';
 import Pantalla from './component/input';
+import botonClear from './component/btnClear';
 
 function App() {
   return (
@@ -55,7 +56,11 @@ function App() {
         </div>
 
         {/* Agregamos una nueva fila, esta ultima fila sera para el botón de clic */}
-        <div className='fila'></div>
+        {/* En esta parte se agrega el boton de "clear" */}
+        {/* Este boton si tendra una etiqueta de apertura y una de cierre porque vamos asignarle el texto "clear" */}
+        <div className='fila'>
+          <botonClear>Clear</botonClear>
+        </div>
       </div>
     </div>
   );
