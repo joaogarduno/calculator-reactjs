@@ -1,4 +1,7 @@
-import React from 'react'
+import React from 'react';
+import '../css/input.css';
+
+// FUNCIONES FLECHA O ARROW FUNCTIONS
 // Forma alternativa de definir los componentes funcionales, no siempre y no necesariamente tenemos que usar la palabra clave "function", tenemos otra alternativa que se llama "const" y definir el componente como una "funcion flecha" o tambien conocida como "arrow function"
 
 // NOTA: Recordar que siempre el nombre del componente siempre debe iniciar con mayuscula y definimos el "componente" como normalmente definimos una "funcion flecha".
@@ -7,7 +10,7 @@ import React from 'react'
 // En nuestro caso la pantalla sera un div sencillo, que mostrara un cierto valor llamado "input", entonces ese <div> va a tener una clase llamada "input"
 
 // El "input" es el valor ingresado por el usuario, es decir es el valor que ingreso el usuario.
-// Pero como vamos a tomar esos "props" vamos a usar la sintaxis de "desestructuracion" vamos a escribir "({ input }) dentro del parentesis de la funcion flecha y luego ese valor puesto como "prametro" que ha ingresado el usuario que se pasara al componente
+// Pero como vamos a tomar esos "props" vamos a usar la sintaxis de "desestructuracion" vamos a escribir "({ input }) dentro del parentesis de la funcion flecha y luego ese valor puesto como "prametro" que ha ingresado el usuario que se pasara al componente.
 const Pantalla = ({ input }) => (
   <div className='input'>
     {/* Ese valor lo vamos a reemplazar aqui */}
@@ -18,6 +21,6 @@ const Pantalla = ({ input }) => (
 
 export default Pantalla;
 
-// Recordar que acabamos de definir un componente como una funcion flecha.
+// Recordar que acabamos de definir un "componente" como una funcion flecha.
 
-// Entonces, primero lo definimos nuestro componente como una funcion flecha a traves de una constante para que no se pueda reasignar ese valor de pantalla y que "Pantalla" es el nombre del componente.
+// Entonces, primero definimos nuestro componente como una funcion flecha a traves de una constante para que no se pueda reasignar ese valor de pantalla y "Pantalla" es el nombre del componente.

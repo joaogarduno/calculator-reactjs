@@ -24,7 +24,6 @@ function App() {
         {/* Ahora que tenemos nuestro componente Pantalla podemos mostrarlo en nuestra estructura principal */}
         <Pantalla />
 
-
         {/* Dentro de este <div> vamos a tener todos los botones las filas y los distintos elementos de la calculadora como su pantalla */}
 
         {/* Para ir creando la estructura inicial creamos distintos <div> */}
