@@ -55,13 +55,34 @@ function Boton(props){
       * Y si la primera parte llamada a la funcion es decir esto "esOperador(props.children)"  es falsa entonces se retornara "null"
       * 
     */
+
+    // EVENT LISTENER
+    // Para poder agregar ese "eventListener" ese oyente de eventos tenemos que agregarselo directamente en la estructura JSX, es decir en este archivo llamado "boton.jsx".
+    // Sabemos que esa funcion "manejarClic" necesita un valor, nosotros nos estamos refieriendo a esa funcion con el nombre manejar clic.
+    // Pero cuando usamos ese nombre del props en realidad nos  estamos refieriendo a cualquier valor que hayamos pasado a ese "prop", en este caso era la funcion "agregarInput" y esa funcion necesita recibir un valor para poder realizar esa funcion.
+    // Y el valor que le estariamos pasando seria "props.children", ¿por qué? porque cuando hagamos clic en  uno de los botones queremos que se agrege a la pantalla el valor de ese boton, el numero o el simbolo o cualquiera de esos simbolos que tenemos en la calculadora y ese valor es "props.children" se esta pasando como un argumento
     <div
-      className={`boton-contenedor ${esOperador(props.children) ? 'operador' : null}`.trim()}>
+      className={`boton-contenedor ${esOperador(props.children) ? 'operador' : null}`.trim()}
+      onClick={() => props.manejarClic(props.children)}>
       {props.children}
     </div>
 
     // El metodo ".trim()" es un metodo que te permite remover del principio o del final de una cadena de caracteres o en este caso una plantilla.
   );
+  // EVENT LISTENER
+  // Nosotros estamos pensando en el caso de "onClick={props.manejarClic(props.children)}" que estamos llamando a una funcion, pero precisamente como estamos llamando a una funcion... esto "props.manejarClic(props.children)" se vera reemplazado como valor retornado por esa funcion.
+
+  // Para decirle al <div> que tiene que llamar a esa funcion tenemos que decirle es escribir algo parecido a una funcion flecha "() =>" al inicio de "props.manejarClic", asi estamos definiendo una funcion anual anonima una funcion que solo se va a usar una vez (esta es otra alternativa).
+
+  // Y con esto estamos diciendo que cuando ocurra un clic se va a llamar a una funcion nueva que estamos creado que es anonima (no se esta definiendo arriba como otra funcion con un nombre especifico), si no que vamos a llamar a esta funcion "() => props.manejarClic(props.children)" nueva que no toma ningun parametro, podemos ver que es como una funcion flecha y retorna el resultado de llamar a esta funcion nueva "props.manejarClic(props.children)"
+  
+  // Ahora si estamos escribiendo una funcion como el valor de "onClick". Antes estabamos escribiendo una llamada a una funcion que es muy distinto, esta es una llamada a una funcion "props.manejarClic(props.children)" que se iba a ejecutar y se iba a retornar el valor retornado se iba a reemplazar aqui "props.manejarClic(props.children)".
+
+  // Pero ahora con la funcion flecha o gracias a la funcion flecha, "() => props.manejarClic(props.children)" ahora si estamos escribiendo una funcion como tal dentro de las llaves y eso es lo que se necesita para el oyente de eventos es decir, el "eventListener"
+
+  // PEro porque en lugar de una llamada tenemos que escribir una funcion, pero piensalo de esta forma, de esta forma "() =>" esa parte le esta diciendo a React o a JavaScript que queremos que se llame a una funcion, nuestro oyente de evenetos es decir, nuestro "eventListener" cuado ocurra un click, sera, una funcion que llame a otra funcion, es como una accion que esta ahi esperando a que ocurra el evento
+
+  // En lugar de ocupar esto... "props.manejarClic(props.children)" que nos va a retornar solo un valor
 
 }
 

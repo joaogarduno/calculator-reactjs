@@ -13,6 +13,8 @@ import { useState } from 'react';
 // NOTA: Otro enfoque para poder realizarlo es creando otro componente llamado "calculadora" y que ese componente tuviera ese estado, cualquiera de los dos es valido.
 
 function App() {
+
+  // /FUNCION AGREGAR INPUT
   // Para crear ese estado ¿qué es lo que ha ingresado el usuario hasta el momento?
   const [input, setInput] = useState('');
   // En esta constante estamos creando un estado para la aplicacion llamado "input" este "input" que significa "valor ingresado por el usuario" se mantendra como el estado del componente "input" y por supuesto que tenemo una funcion para poder actualizar el "app o input"
@@ -20,6 +22,7 @@ function App() {
 
   // Lo primero que haremos es asignar ese "input" como el valor de la pantalla para que cuando se actualice, actualice su valor. Vamos a nuestro componente "Pantalla" y vamos a pasar el "prop" "input" con el valor del estado "input"
 
+  // La funcion "input"
   // Recorda que inicialmente vamos a empezar con una cadena vacia y luego vamos a definir otra funcion.
   // Tenemos la funcion "agregar input"
   const agregarInput = val => {
@@ -56,28 +59,43 @@ function App() {
         {/* Estos div definiran las filas, cada uno de estos sera una fila que vemos en una calculadora en los botones */}
         {/* Cada fila tendra 4 botones */}
         <div className='fila'>
-          <Boton>1</Boton>
-          <Boton>2</Boton>
-          <Boton>3</Boton>
-          <Boton>+</Boton>
+
+          {/* EVENT LISTENER */}
+          {/* Ya que tenemos nuestra funcion llamada "agregarInput" ahora tenemos que hacer que cada vez que hagamos clic en un botón se llame a esta función para agregar ese valor */}
+          {/* En la estuctura de los botones vamos a pasarle a cada uno de estos botones un "props" llamado "manejar clic" y le agregaremos esa funcion "agregarInput" */}
+
+          {/* Vamos a pasar un "props" a cada uno de estos botones que se llamara "manejarClic"  */}
+          {/* ¿Cómo va a manejar el botón un clic especifico? lo hara llamando a la funcion "agregarInput" */}
+          {/* El botón "clear" sera distinto, pero todos los demas botones van a "agregarInput" */}
+
+          {/* Es decir mandaran a llamar a esta funcion, pero para eso primero tenemos que darles acceso a esa funcion pasandola como un "prop" debemos observar que solo estamos escribiendo el nombre de la funcion no estoy agregando un par de parentesis, ejemp. "manejarClic={agregarInput()}" si agrego los parentesis significa que:
+            -Quiero llamar a la funcion
+            -y pasar el resltado 
+            
+          Pero eso es lo que NO queremos, lo que queremos es pasar directamente la funcion para poder llamarla dentro del componente.
+           */}
+          <Boton manejarClic={agregarInput}>1</Boton>
+          <Boton manejarClic={agregarInput}>2</Boton>
+          <Boton manejarClic={agregarInput}>3</Boton>
+          <Boton manejarClic={agregarInput}>+</Boton>
         </div>
         <div className='fila'>
-          <Boton>4</Boton>
-          <Boton>5</Boton>
-          <Boton>6</Boton>
-          <Boton>-</Boton>
+          <Boton manejarClic={agregarInput}>4</Boton>
+          <Boton manejarClic={agregarInput}>5</Boton>
+          <Boton manejarClic={agregarInput}>6</Boton>
+          <Boton manejarClic={agregarInput}>-</Boton>
         </div>
         <div className='fila'>
-          <Boton>7</Boton>
-          <Boton>8</Boton>
-          <Boton>9</Boton>
-          <Boton>*</Boton>
+          <Boton manejarClic={agregarInput}>7</Boton>
+          <Boton manejarClic={agregarInput}>8</Boton>
+          <Boton manejarClic={agregarInput}>9</Boton>
+          <Boton manejarClic={agregarInput}>*</Boton>
         </div>
         <div className='fila'>
-          <Boton>=</Boton>
-          <Boton>0</Boton>
-          <Boton>.</Boton>
-          <Boton>/</Boton>
+          <Boton manejarClic={agregarInput}>=</Boton>
+          <Boton manejarClic={agregarInput}>0</Boton>
+          <Boton manejarClic={agregarInput}>.</Boton>
+          <Boton manejarClic={agregarInput}>/</Boton>
         </div>
 
         {/* Agregamos una nueva fila, esta ultima fila sera para el botón de clic */}
