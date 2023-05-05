@@ -17,7 +17,7 @@ function App() {
   // /FUNCION AGREGAR INPUT
   // Para crear ese estado ¿qué es lo que ha ingresado el usuario hasta el momento?
   const [input, setInput] = useState('');
-  // En esta constante estamos creando un estado para la aplicacion llamado "input" este "input" que significa "valor ingresado por el usuario" se mantendra como el estado del componente "input" y por supuesto que tenemo una funcion para poder actualizar el "app o input"
+  // En esta constante estamos creando un estado para la aplicacion llamado "input" este "input" que significa "valor ingresado por el usuario" se mantendra como el estado del componente "input" y por supuesto que tenemos una funcion para poder actualizar el "app o input"
   // Inicialmente ese "input" sera una cadena vacia, de esta manera no veremos nada en la pantalla 
 
   // Lo primero que haremos es asignar ese "input" como el valor de la pantalla para que cuando se actualice, actualice su valor. Vamos a nuestro componente "Pantalla" y vamos a pasar el "prop" "input" con el valor del estado "input"
@@ -101,9 +101,28 @@ function App() {
         {/* Agregamos una nueva fila, esta ultima fila sera para el botón de clic */}
         {/* En esta parte se agrega el boton de "clear" */}
         {/* Este boton si tendra una etiqueta de apertura y una de cierre porque vamos asignarle el texto "clear" */}
+
+        {/* 
+        
+        // EVENT LISTENER PARA EL BOTON "CLEAR"
+        // Ahora que es lo que pasara ya que no tenemos de alguna forma eliminar esos valores de la pantalla y como vamos a eliminarlos, pues tenemos que empezar a implementar la funcionalidad del boton "clear".
+        // Lo que queremos basicamente es reiniciar el estado del input, queremos volver a esa cadena de caracteres vacia que teniamos inicialmente, entonces basicamente lo que hacemos es definir una funcion
+        // Ya vimos como podemos definir una funcion de esta forma, con cualquier funcion que necesites puedes definir la forma y luego pasarlo como el valor del "promp"
+        
+        // Pero otra opcion es definir la funcion de forma anonima directamente aqui, en lugar de usar un nombre al definir una funcion si es muy sencilla y muy pequeña puedes definirlo ahi mismo */}
+
+        {/* Para el boton "Clear" vamos a tener un prop llamado "manejar clear", pero como vamos a manejar ese evento, vamos a manejarlo con una "funcion anonima" o "funcion flecha" que va a reiniciar el input con "setInput" a una cadena de caracteres vacía y de esta manera se crea esta funcion, esta es la funcion que estamos definiendo "() => setInput('')" */}
+        {/* Recuerda que como es una funcion muy sencilla recuerda que para que sea un funcion tenemos que agregar "() =>" y no solo podemos llamar a esta funcion "setInput('')" si no que podemos escribirla directamente */}
+
+        {/* Tambien podemos definirla como lo hicimos mas arriba asignando una funcion a una constante */}
+
+        {/* Tambien debemos asegurarnos que el componente reciba ese "eventListener" y lo pueda asignar correctamente, asi que vamos a nuestro archivo de botón "Clear" */}
         <div className='fila'>
-          <BotonClear>Clear</BotonClear>
+          <BotonClear manejarClear={() => setInput('')}>
+            Clear
+          </BotonClear>
         </div>
+
       </div>
     </div>
   );

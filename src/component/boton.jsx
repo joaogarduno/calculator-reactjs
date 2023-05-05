@@ -80,7 +80,7 @@ function Boton(props){
 
   // Pero ahora con la funcion flecha o gracias a la funcion flecha, "() => props.manejarClic(props.children)" ahora si estamos escribiendo una funcion como tal dentro de las llaves y eso es lo que se necesita para el oyente de eventos es decir, el "eventListener"
 
-  // PEro porque en lugar de una llamada tenemos que escribir una funcion, pero piensalo de esta forma, de esta forma "() =>" esa parte le esta diciendo a React o a JavaScript que queremos que se llame a una funcion, nuestro oyente de evenetos es decir, nuestro "eventListener" cuado ocurra un click, sera, una funcion que llame a otra funcion, es como una accion que esta ahi esperando a que ocurra el evento
+  // ¿Pero porque en lugar de una llamada tenemos que escribir una funcion?, pero piensalo de esta forma, de esta forma "() =>" esa parte le esta diciendo a React o a JavaScript que queremos que se llame a una función, nuestro oyente de evenetos es decir, nuestro "eventListener" cuado ocurra un click, sera, una funcion que llame a otra funcion, es como una accion que esta ahi esperando a que ocurra el evento
 
   // En lugar de ocupar esto... "props.manejarClic(props.children)" que nos va a retornar solo un valor
 
