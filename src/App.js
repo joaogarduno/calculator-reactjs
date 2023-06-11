@@ -1,6 +1,8 @@
+import React from 'react';
 import './App.css';
 // Para poder importar una imagen necesitamos una sentencia de importacion
 import logoArtheFacto from './img/arthefacto-logo.png';
+// import React, {Boton} from 'react';
 import Boton from './component/boton';
 import Pantalla from './component/input';
 import BotonClear from './component/btnClear';
@@ -11,6 +13,10 @@ import { useState } from 'react';
 // Ya tenemos nuetsro "hook" eso significa que ya podemos asignarle un estado a nuestro componente, en este caso es nuestro componente principal de la aplicacion.
 // Trabajaremos con el estado directamente.
 // NOTA: Otro enfoque para poder realizarlo es creando otro componente llamado "calculadora" y que ese componente tuviera ese estado, cualquiera de los dos es valido.
+
+// IMPORTAMOS EL MATHJS
+import { evaluate } from 'mathjs';
+// Existen otras formas de realizar esta evaluacion pero estamos instalando un paquete externo con el nodePackageManager NPM y como usarlos en la aplicacion de react
 
 function App() {
 
@@ -29,6 +35,21 @@ function App() {
     // ¿Qué es lo que hace esta funcion? esta funcion va actualizar el input.
     // Y dentro de los parentesis le vamos a pasar el nuevo valor de "input", y cual va a ser? el input que teniamos anteriormente, concatenado con el nuevo valor.
     setInput(input + val); 
+  };
+
+
+  // FUNCION "CALCULAR EL RESULTADO"
+  // Vamos a actualizar un nuevo input es decir, como si lo fuera solo que reemplazamos el valor y sera como el nuevo valor que se mostrara en la pantalla sera el resultado de evaluar lo que estaba en la pantalla, evaluar matemáticamente es decir, evaluar el "input"
+  const calcularResultado = () => {
+
+    // AGREGAMOS CONDICIONAL
+    // 
+    if(input){
+      // Esta funcion de evaluar "evaluate", lo vamos a conseguir en un paquete llamado "mathjs", pero para hacer uso de el necesitamos primero importarlo.
+      setInput(evaluate(input));
+    } else{
+      alert('Agregue valores para realizar los cálculos')
+    }    
   };
 
 
@@ -92,7 +113,9 @@ function App() {
           <Boton manejarClic={agregarInput}>*</Boton>
         </div>
         <div className='fila'>
-          <Boton manejarClic={agregarInput}>=</Boton>
+          {/* vamos a reemplazar este valor por la misma funcion que nosotros vamos a definir en la parte superior de este archivo, donde fue definida la otra función (agregarInput) */}
+          {/* Asi es como nosotros podemos colocar un signo y a ese darle el valor que represente o en este caso la funcionalidad con la que cumple */}
+          <Boton manejarClic={calcularResultado}>=</Boton>
           <Boton manejarClic={agregarInput}>0</Boton>
           <Boton manejarClic={agregarInput}>.</Boton>
           <Boton manejarClic={agregarInput}>/</Boton>
@@ -106,17 +129,18 @@ function App() {
         
         // EVENT LISTENER PARA EL BOTON "CLEAR"
         // Ahora que es lo que pasara ya que no tenemos de alguna forma eliminar esos valores de la pantalla y como vamos a eliminarlos, pues tenemos que empezar a implementar la funcionalidad del boton "clear".
-        // Lo que queremos basicamente es reiniciar el estado del input, queremos volver a esa cadena de caracteres vacia que teniamos inicialmente, entonces basicamente lo que hacemos es definir una funcion
+        
+        // Lo que queremos basicamente es reiniciar el estado del input, queremos volver a esa cadena de caracteres vacia que teniamos inicialmente, entonces basicamente lo que hacemos es definir una funcion.
         // Ya vimos como podemos definir una funcion de esta forma, con cualquier funcion que necesites puedes definir la forma y luego pasarlo como el valor del "promp"
         
         // Pero otra opcion es definir la funcion de forma anonima directamente aqui, en lugar de usar un nombre al definir una funcion si es muy sencilla y muy pequeña puedes definirlo ahi mismo */}
 
-        {/* Para el boton "Clear" vamos a tener un prop llamado "manejar clear", pero como vamos a manejar ese evento, vamos a manejarlo con una "funcion anonima" o "funcion flecha" que va a reiniciar el input con "setInput" a una cadena de caracteres vacía y de esta manera se crea esta funcion, esta es la funcion que estamos definiendo "() => setInput('')" */}
-        {/* Recuerda que como es una funcion muy sencilla recuerda que para que sea un funcion tenemos que agregar "() =>" y no solo podemos llamar a esta funcion "setInput('')" si no que podemos escribirla directamente */}
+        {/* Para el boton "Clear" vamos a tener un prop llamado "manejarClear", pero como vamos a manejar ese evento, vamos a manejarlo con una "funcion anonima" o "funcion flecha" que va a reiniciar el input con "setInput" a una cadena de caracteres vacía y de esta manera se crea esta funcion, esta es la funcion que estamos definiendo "() => setInput('')" */}
+        {/* Recuerda que como es una funcion muy sencilla, recuerda que para que sea un funcion tenemos que agregar "() =>" y no solo podemos llamar a esta funcion "setInput('')" si no que podemos escribirla directamente */}
 
-        {/* Tambien podemos definirla como lo hicimos mas arriba asignando una funcion a una constante */}
+        {/* Tambien podemos definirla como lo hicimos mas arriba una funcion asignada a una constante 👆️, pero esto es solo una de las alternativas*/}
 
-        {/* Tambien debemos asegurarnos que el componente reciba ese "eventListener" y lo pueda asignar correctamente, asi que vamos a nuestro archivo de botón "Clear" */}
+        {/* Tambien debemos asegurarnos que el componente reciba ese "eventListener" y lo pueda asignar correctamente, asi que vamos a nuestro archivo de botón "btnClear" */} 
         <div className='fila'>
           <BotonClear manejarClear={() => setInput('')}>
             Clear
