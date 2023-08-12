@@ -28,7 +28,13 @@ function App() {
         {/* <<<--- 03 - ESTRUCTURA DE LA CALCULADORA --->>> */}
         {/* Para ir creando la estructura inicial vamos a crear distintos <div> que van a definir las filas de nuestra calculadora */}
         {/* Entonces, cada uno de estos <div> sera una fila que podemos ver en la calculadora con los botones */}
-        <div className='fila'></div>
+        <div className='fila'>
+
+          {/* <<<--- 04 - CREANDO LOS COMPONENTES --->>> */}
+          {/* Crearemos los componentes de nuestra aplicación */}
+          {/* Una alternativa es crear un componente completo para la calculadora y luego crear otros componentes mas pequeños, pero en este caso crearemos componentes como los botónes, la pantalla y luego los vamos a ubicar en el componente principal de la aplicación  llamada "App"  */}
+          {/* Crearemos una carpeta llamada "componentes" */}
+        </div>
         <div className='fila'></div>
         <div className='fila'></div>
         <div className='fila'></div>
