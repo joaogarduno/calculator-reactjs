@@ -32,7 +32,9 @@ function App() {
 
           {/* <<<--- 04 - CREANDO LOS COMPONENTES --->>> */}
           {/* Crearemos los componentes de nuestra aplicación */}
+
           {/* Una alternativa es crear un componente completo para la calculadora y luego crear otros componentes mas pequeños, pero en este caso crearemos componentes como los botónes, la pantalla y luego los vamos a ubicar en el componente principal de la aplicación  llamada "App"  */}
+          
           {/* Crearemos una carpeta llamada "componentes" */}
         </div>
         <div className='fila'></div>
