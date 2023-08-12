@@ -1,3 +1,4 @@
+/* <<<--- 01 - COMENZAR EL PROYECTO --->>> */
 .App{
   outline: 1px solid red;
   /* width: 100%; */
@@ -34,4 +35,13 @@
   background-color: #99C9FF;
   border-radius: 20px;
   border: 5px solid white;
+}
+
+/* <<<--- 03 - ESTRUCTURA DE LA CALCULADORA --->>> */
+.fila{
+  margin: 4px;
+  display: flex;
+  /* No incluiremos "flex-wrap" ya que queremos que todos los elementos se muestren en una sola linea, el solo hecho de utilizar la propiedad "display" con el valor "flex" obligamos a CSS que presente los elementos en una sola linea */
+  align-items: center; /* vertical */
+  justify-content: center; /* horizontal */
 }

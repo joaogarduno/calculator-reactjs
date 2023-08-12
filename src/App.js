@@ -24,6 +24,17 @@ function App() {
       {/* Este <div> sera el contenedor principal de la calculadora */}
       <div className='contenedor-calculadora'>
         {/* Dentro de este <div> vamos a tener todos los botónes, las filas y los distintos elementos de la calculadora como la pantalla, todo eso estara dentro del <div> */}
+
+        {/* <<<--- 03 - ESTRUCTURA DE LA CALCULADORA --->>> */}
+        {/* Para ir creando la estructura inicial vamos a crear distintos <div> que van a definir las filas de nuestra calculadora */}
+        {/* Entonces, cada uno de estos <div> sera una fila que podemos ver en la calculadora con los botones */}
+        <div className='fila'></div>
+        <div className='fila'></div>
+        <div className='fila'></div>
+        <div className='fila'></div>
+
+        {/* Agregamos otro <div> que tendra la clase "fila", y esa ultima fila sera para el botón de "clear" */}
+        <div className='fila'></div>
       </div>
 
     </div>
