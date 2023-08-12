@@ -36,6 +36,9 @@ function App() {
           {/* Una alternativa es crear un componente completo para la calculadora y luego crear otros componentes mas pequeños, pero en este caso crearemos componentes como los botónes, la pantalla y luego los vamos a ubicar en el componente principal de la aplicación  llamada "App"  */}
           
           {/* Crearemos una carpeta llamada "componentes" */}
+
+          {/* <<<--- 04.1 - COMPONENTE BOTÓN --->>> */}
+          {/* Iniciamos con el componente mas resaltantes de una calculadora que son los botones, en la capeta "componentes" creamos un archivo llamado "Boton.jsx" */}
         </div>
         <div className='fila'></div>
         <div className='fila'></div>
