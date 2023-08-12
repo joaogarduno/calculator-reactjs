@@ -20,6 +20,12 @@ function App() {
         /> 
       </div>
 
+      {/* <<<--- 02 - CONTENEDOR PRINCIPAL --->>> */}
+      {/* Este <div> sera el contenedor principal de la calculadora */}
+      <div className='contenedor-calculadora'>
+        {/* Dentro de este <div> vamos a tener todos los botónes, las filas y los distintos elementos de la calculadora como la pantalla, todo eso estara dentro del <div> */}
+      </div>
+
     </div>
   );
 }
