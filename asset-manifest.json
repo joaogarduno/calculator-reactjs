@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/calculator-reactjs/static/css/main.751de265.css",
+    "main.js": "/calculator-reactjs/static/js/main.9be884c5.js",
+    "static/media/arthefacto_favicon.png": "/calculator-reactjs/static/media/arthefacto_favicon.9d29cad8a477509370ca.png",
+    "index.html": "/calculator-reactjs/index.html",
+    "main.751de265.css.map": "/calculator-reactjs/static/css/main.751de265.css.map",
+    "main.9be884c5.js.map": "/calculator-reactjs/static/js/main.9be884c5.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.751de265.css",
+    "static/js/main.9be884c5.js"
+  ]
+}
